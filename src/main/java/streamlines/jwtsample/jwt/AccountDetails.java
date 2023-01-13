@@ -1,11 +1,13 @@
 package streamlines.jwtsample.jwt;
 
+import lombok.Getter;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import streamlines.jwtsample.account.Account;
 
 import java.util.List;
 
+@Getter
 public class AccountDetails extends User {
     private final Account account;
 

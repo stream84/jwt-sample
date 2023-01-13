@@ -38,6 +38,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             try {
                 Subject subject = jwtProvider.getSubject(atk);
+                String requestURI = request.getRequestURI();
+                if(subject.getType().equals("RTK") && !requestURI.equals("/account/reissue")) { //RTK 토큰인 경우 /account/reissue 에서만 사용한다.
+                    throw new JwtException("토큰을 확인하세요");
+                }
+
                 UserDetails userDetails =
                         accountDetailsService.loadUserByUsername(subject.getEmail());
 

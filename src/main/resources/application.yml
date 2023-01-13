@@ -9,7 +9,8 @@ spring:
   jwt:
     key: softcamp@jwt.key
     live:
-      atk: 300000
+      atk: 60000
+      rtk: 300000
 
   jpa:
     hibernate:
@@ -18,3 +19,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+  redis:
+    host: 10.11.10.147
+    port: 6379

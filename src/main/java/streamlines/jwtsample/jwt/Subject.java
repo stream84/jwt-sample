@@ -21,7 +21,7 @@ public class Subject {
         return new Subject(accountId, email, nickname, "ATK");
     }
 
-    private static Subject rtk(Long accountId, String email, String nickname) {
+    public static Subject rtk(Long accountId, String email, String nickname) {
         return new Subject(accountId, email, nickname, "RTK");
     }
 }
